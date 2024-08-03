@@ -1,6 +1,6 @@
 # Umai
 
-A delicious new outlook on command line argument handling.
+The delicious Bun CLI parser
 
 ---
 ![License](https://flat.badgen.net/github/license/tcarrio/umai)
