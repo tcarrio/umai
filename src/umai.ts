@@ -9,7 +9,7 @@ export const UmaiState = Symbol.for("__umai_state__");
 
 type SemVer = `${number}.${number}.${number}`;
 
-type ValueState = Record<string, string | boolean> & {
+type ValueState = unknown & {
 	[UmaiState]: {
 		version: SemVer;
 		runtime: RuntimeType;
@@ -90,3 +90,6 @@ export default {
 	StringArgument: StringArgument,
 	Umai,
 };
+
+export type { LogLevel } from "./logger";
+export type { EnumKey, EnumValue } from "./enums";

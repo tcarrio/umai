@@ -1,17 +1,17 @@
 import { describe, expect, it } from "bun:test";
 import { umai } from "../deps";
 
-const { Flag, Umai } = umai;
+const { FlagArgument, Umai } = umai;
 
 describe("Flag#constructor", () => {
 	it("Creates a new empty flag argument.", () => {
-		expect(new Flag().name).toBe(undefined);
+		expect(new FlagArgument().name).toBe(undefined);
 	});
 });
 
 describe("Flag.withName -> Flag", () => {
 	it("the name for this argument, used to define it's output in 'Umai.values'", () => {
-		const flag = new Flag().withName("test");
+		const flag = new FlagArgument().withName("test");
 
 		expect(flag.name).toBe("test");
 	});
@@ -19,7 +19,7 @@ describe("Flag.withName -> Flag", () => {
 
 describe("Flag.withIdentifier -> Flag", () => {
 	it("the argument identifier to search for (uses name if not set)", () => {
-		const flag = new Flag().withName("test").withIdentifier("testflag");
+		const flag = new FlagArgument().withName("test").withIdentifier("testflag");
 
 		expect(flag.id).toBe("testflag");
 	});
@@ -27,9 +27,9 @@ describe("Flag.withIdentifier -> Flag", () => {
 
 describe("Flag.setRequired -> Flag", () => {
 	it("ensures the argument is required, or optional, depending on it's value", () => {
-		const flag = new Flag().withName("test").setRequired(true);
+		const flag = new FlagArgument().withName("test").setRequired(true);
 
-		const flag2 = new Flag().withName("test");
+		const flag2 = new FlagArgument().withName("test");
 
 		expect(flag.required).toBe(true);
 
@@ -39,9 +39,9 @@ describe("Flag.setRequired -> Flag", () => {
 
 describe("Flag.setDefault -> Flag", () => {
 	it("sets the default value to return if the flag is not present", () => {
-		const flag = new Flag().withName("test").setDefault(true);
+		const flag = new FlagArgument().withName("test").setDefault(true);
 
-		const flag2 = new Flag().withName("test");
+		const flag2 = new FlagArgument().withName("test");
 
 		expect(flag.default).toBe(true);
 
@@ -51,7 +51,7 @@ describe("Flag.setDefault -> Flag", () => {
 
 describe("Flag.withShortIdentifier -> Flag", () => {
 	it("the short argument to search for, if identifier isn't found", () => {
-		const flag = new Flag().withName("test").withShortIdentifier("t");
+		const flag = new FlagArgument().withName("test").withShortIdentifier("t");
 
 		expect(flag.short).toBe("t");
 	});
@@ -59,7 +59,7 @@ describe("Flag.withShortIdentifier -> Flag", () => {
 
 describe("Flag.process -> Boolean", () => {
 	it("returns true if flag is present in input", () => {
-		const flag = new Flag()
+		const flag = new FlagArgument()
 			.withName("test")
 			.withIdentifier("testflag")
 			.withShortIdentifier("t");
@@ -82,7 +82,7 @@ describe("Flag.process -> Boolean", () => {
 
 describe("Flag.process (required) -> Boolean", () => {
 	it("returns true if flag is present in input", () => {
-		const flag = new Flag()
+		const flag = new FlagArgument()
 			.withName("test")
 			.withIdentifier("testflag")
 			.withShortIdentifier("t")
@@ -98,7 +98,7 @@ describe("Flag.process (required) -> Boolean", () => {
 
 describe("Flag.process (required no defualt) -> Boolean", () => {
 	it("returns true if flag is present in input", () => {
-		const flag = new Flag()
+		const flag = new FlagArgument()
 			.withName("test")
 			.withIdentifier("testflag")
 			.withShortIdentifier("t")

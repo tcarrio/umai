@@ -5,7 +5,7 @@ import type { Argument } from "./Argument";
  *
  * @example
  * ```ts
- * let flag = new Flag()
+ * let flag = new FlagArgument()
  *              .withName("flag")
  * ```
  */

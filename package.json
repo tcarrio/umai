@@ -1,29 +1,23 @@
 {
-  "name": "@0xc/umai",
-  "version": "0.1.0",
-  "description": "The delicious Bun CLI parser.",
-  "main": "src/umai.ts",
-  "scripts": {
-    "test": "bun test",
-    "format": "bunx @biomejs/biome format --write",
-    "lint": "bunx @biomejs/biome lint --write"
-  },
-  "keywords": [
-    "commander",
-    "umai",
-    "argv",
-    "cli",
-    "bun"
-  ],
-  "author": "Tom Carrio <tom@carrio.dev>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tcarrio/umai"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.8.3",
-    "@types/jest": "^28.1.4",
-    "bun-types": "^0.1.2"
-  }
+	"name": "@0xc/umai",
+	"version": "0.1.0",
+	"description": "The delicious Bun CLI parser.",
+	"main": "src/umai.ts",
+	"scripts": {
+		"test": "bun test",
+		"format": "bunx @biomejs/biome format --write",
+		"lint": "bunx @biomejs/biome lint --write"
+	},
+	"keywords": ["commander", "umai", "argv", "cli", "bun"],
+	"author": "Tom Carrio <tom@carrio.dev>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tcarrio/umai"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.3",
+		"@types/jest": "^28.1.4",
+		"bun-types": "^0.1.2"
+	}
 }
